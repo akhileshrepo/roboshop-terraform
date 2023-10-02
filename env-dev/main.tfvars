@@ -18,3 +18,7 @@ vpc = {
         }
     }
 }
+
+default_vpc_id = "vpc-7494921984892"
+default_vpc_cidr = "172.13.0.0/16"
+default_vpc_route_table_id = "rtb-7729429u990"
