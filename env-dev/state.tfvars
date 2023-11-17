@@ -1,3 +1,3 @@
-bucket = "firstbucket.akhil"
-key = "dev/terraform.tfstate"
+bucket = "tf-state-db74"
+key    = "dev/terraform.tfstate"
 region = "us-east-1"
