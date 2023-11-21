@@ -18,4 +18,7 @@ vpc = {
   }
 }
 
+
 default_vpc_id = ""
+default_vpc_cidr = ""
+default_vpc_route_table_id = ""
