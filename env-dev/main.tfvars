@@ -49,3 +49,9 @@ alb = {
     sg_port  = 80
   }
 }
+
+docdb = {
+  main = {
+
+  }
+}
