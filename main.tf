@@ -25,7 +25,6 @@ module "alb" {
 }
 
 module "docdb" {
-
     source               = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
     tags                 = var.tags
     env                  = var.env
@@ -36,6 +35,6 @@ module "docdb" {
     skip_final_snapshot     = each.value["skip_final_snapshot"]
     vpc_id               = local.vpc_id
     sg_ingress_cidr      = local.app_subnets_cidr
-
+    engine_version       = each.value["engine_version"]
 }
 
