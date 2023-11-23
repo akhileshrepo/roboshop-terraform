@@ -25,7 +25,7 @@ default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id                    =  "Z0929615AH1MSD5PXATC"
 ssh_ingress_cidr           = ["172.31.39.31/32"]
 env                        = "dev"
-
+kms_key_id                 = ""
 
 
 tags = {
