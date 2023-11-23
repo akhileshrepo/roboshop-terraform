@@ -63,22 +63,40 @@ module "rds" {
 
 
 module "elasticache" {
-    source                                  =   "git::https://github.com/akhileshrepo/tf-module-elasticache.git"
-    tags                                    =   var.tags
-    env                                     =   var.env
-    for_each                                =    var.elasticache
-    subnet_ids                              =   local.db_subnets
-    vpc_id                                  =    local.vpc_id
-    sg_ingress_cidr                         =   local.app_subnets_cidr
-    elasticache_type                        =  each.value["elasticache_type"]
-    family                                  =  each.value["family"]
-    port                                  =  each.value["port"]
-    engine                                  =  each.value["engine"]
-    node_type                                  =  each.value["node_type"]
-    num_cache_nodes                                  =  each.value["num_cache_nodes"]
-    engine_version                                  =  each.value["engine_version"]
+    source = "git::https://github.com/raghudevopsb74/tf-module-elasticache.git"
+    tags   = var.tags
+    env    = var.env
+
+    for_each = var.elasticache
+
+    subnet_ids       = local.db_subnets
+    vpc_id           = local.vpc_id
+    sg_ingress_cidr  = local.app_subnets_cidr
+    elasticache_type = each.value["elasticache_type"]
+    family           = each.value["family"]
+    port             = each.value["port"]
+    engine           = each.value["engine"]
+    node_type        = each.value["node_type"]
+    num_cache_nodes  = each.value["num_cache_nodes"]
+    engine_version   = each.value["engine_version"]
+}
+
+module "rabbitmq" {
+    source  = "git::https://github.com/raghudevopsb74/tf-module-rabbitmq.git"
+    tags    = var.tags
+    env     = var.env
+    zone_id = var.zone_id
+
+    for_each = var.rabbitmq
+
+    subnet_ids       = local.db_subnets
+    vpc_id           = local.vpc_id
+    sg_ingress_cidr  = local.app_subnets_cidr
+    instance_type    = each.value["instance_type"]
+    ssh_ingress_cidr = var.ssh_ingress_cidr
 
 }
+
 
 /*
 module "rabbitmq" {
