@@ -90,6 +90,7 @@ elasticache ={
   }
 }
 
+/*
 rabbitmq = {
   main = {
     ssh_ingress_cidr = ["172.31.39.31/32"]

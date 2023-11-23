@@ -80,6 +80,7 @@ module "elasticache" {
 
 }
 
+/*
 module "rabbitmq" {
     source  = "git::https://github.com/raghudevopsb74/tf-module-rabbitmq.git"
     tags    = var.tags
