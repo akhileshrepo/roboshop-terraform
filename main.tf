@@ -95,3 +95,4 @@ module "rabbitmq" {
     instance_type    = each.value["instance_type"]
     ssh_ingress_cidr = var.ssh_ingress_cidr
 }
+*/
