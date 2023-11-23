@@ -8,6 +8,8 @@ variable "alb" {}
 variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
+/*
 variable "zone_id" {}
 variable "rabbitmq" {}
 variable "ssh_ingress_cidr" {}
+*/
