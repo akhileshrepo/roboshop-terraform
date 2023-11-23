@@ -92,7 +92,7 @@ elasticache ={
 
 rabbitmq = {
   main = {
-    ssh_ingress_cidr = ["0.0.0.0/0"]
+    ssh_ingress_cidr = ["172.31.39.31/32"]
     instance_type = "t3.small"
 
   }
