@@ -102,7 +102,7 @@ module "rabbitmq" {
 
 
 module "app" {
-    source = "git::git::https://github.com/akhileshrepo/tf-module-app.git"
+    source = "git::https://github.com/akhileshrepo/tf-module-app.git"
     tags   =  var.tags
     env    =  var.env
     zone_id =  var.zone_id
