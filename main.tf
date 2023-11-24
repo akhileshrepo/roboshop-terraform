@@ -101,7 +101,7 @@ module "rabbitmq" {
 */
 
 
-module "apps" {
+module "app" {
     source = "git::git::https://github.com/akhileshrepo/tf-module-app.gi"
     tags   =  var.tags
     env    =  var.env
@@ -120,5 +120,8 @@ module "apps" {
     sg_ingress_cidr  = local.app_subnets_cidr
     vpc_id           = local.vpc_id
     subnet_ids       = local.app_subnets
+
+    alb_name   = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name" null)
+    listener   = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn" null)
 }
 
