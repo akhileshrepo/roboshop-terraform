@@ -122,7 +122,7 @@ module "app" {
     vpc_id           = local.vpc_id
     subnet_ids       = local.app_subnets
 
-    private_alb_name   = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name" null)
-    private_listener   = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn" null)
+    alb_name   = lookup(lookup(lookup(module.alb, each.value["lb_type"], null), "alb", null), "dns_name", null)
+    listener   = lookup(lookup(lookup(module.alb, each.value["lb_type"], null), "listener", null), "arn", null)
 }
 
