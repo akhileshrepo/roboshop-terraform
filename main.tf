@@ -107,6 +107,7 @@ module "app" {
     env    =  var.env
     zone_id =  var.zone_id
     ssh_ingress_cidr = var.ssh_ingress_cidr
+    vpc_default_vpc_id = var.vpc_default_vpc_id
 
     for_each = var.apps
     component = each.key
@@ -116,6 +117,7 @@ module "app" {
     max_size         = each.value["max_size"]
     min_size         = each.value["min_size"]
     lb_priority      = each.value["lb_priority"]
+
 
 
     sg_ingress_cidr  = local.app_subnets_cidr
