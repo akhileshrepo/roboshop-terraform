@@ -5,6 +5,7 @@ default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id                    = "Z0929615AH1MSD5PXATC"
 env                        = "dev"
 ssh_ingress_cidr           = ["172.31.39.31/32"]
+kms_key_id                 = "arn:aws:kms:us-east-1:633788536644:key/dce90622-5a23-4f82-a639-be841f534702"
 
 
 ###Tags for resources in resource Group

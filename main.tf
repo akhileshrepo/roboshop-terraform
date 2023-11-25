@@ -43,6 +43,7 @@ module "docdb" {
     engine_family           = each.value["engine_family"]
     instance_count          = each.value["instance_count"]
     instance_class          = each.value["instance_class"]
+    kms_key_id              = var.kms_key_id
 }
 
 module "rds" {
@@ -65,6 +66,8 @@ module "rds" {
     skip_final_snapshot     = each.value["skip_final_snapshot"]
     instance_count          = each.value["instance_count"]
     instance_class          = each.value["instance_class"]
+    kms_key_id              = var.kms_key_id
+
 }
 
 
@@ -100,6 +103,7 @@ module "rabbitmq" {
     sg_ingress_cidr  = local.app_subnets_cidr
     instance_type    = each.value["instance_type"]
     ssh_ingress_cidr = var.ssh_ingress_cidr
+    kms_key_id       = var.kms_key_id
 }
 
 
@@ -112,6 +116,7 @@ module "app" {
   zone_id                 = var.zone_id
   ssh_ingress_cidr        = var.ssh_ingress_cidr
   default_vpc_id          = var.default_vpc_id
+  kms_key_id              = var.kms_key_id
 
   for_each         = var.apps
   component        = each.key

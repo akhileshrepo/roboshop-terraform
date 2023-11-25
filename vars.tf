@@ -12,6 +12,7 @@ variable "rabbitmq" {}
 variable "zone_id" {}
 variable "apps" {}
 variable "ssh_ingress_cidr" {}
+variable "kms_key_id" {}
 
 
 
