@@ -25,7 +25,7 @@ default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id                    =  "Z0929615AH1MSD5PXATC"
 ssh_ingress_cidr           = ["172.31.39.31/32"]
 env                        = "dev"
-kms_key_id                 = ""
+
 
 
 tags = {
@@ -118,7 +118,7 @@ apps = {
     min_size         = 1
     lb_priority      = 2
     lb_type          = "private"
-    parameters       = []
+    parameters       = ["docdb"]
   }
   user = {
     instance_type   =  "t2.micro"
@@ -128,7 +128,7 @@ apps = {
     min_size         = 1
     lb_priority      = 3
     lb_type          = "private"
-    parameters       = []
+    parameters       = ["docdb"]
   }
   cart = {
     instance_type   =  "t2.micro"
