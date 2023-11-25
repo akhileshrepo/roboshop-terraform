@@ -66,7 +66,7 @@ module "rds" {
     skip_final_snapshot     = each.value["skip_final_snapshot"]
     instance_count          = each.value["instance_count"]
     instance_class          = each.value["instance_class"]
-
+    kms_key_id              = var.kms_key_id
 
 }
 
