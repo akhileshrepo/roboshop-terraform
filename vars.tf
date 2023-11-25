@@ -8,9 +8,11 @@ variable "alb" {}
 variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
-
-variable "zone_id" {}
 variable "rabbitmq" {}
-variable "ssh_ingress_cidr" {}
-variable "kms_key_id" {}
+variable "zone_id" {}
 variable "apps" {}
+variable "ssh_ingress_cidr" {}
+
+
+
+
