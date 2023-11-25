@@ -108,6 +108,7 @@ apps = {
     min_size         = 1
     lb_priority      = 1
     lb_type          = "public"
+    parameters       = []
   }
   catalogue = {
     instance_type   =  "t2.micro"
@@ -117,6 +118,7 @@ apps = {
     min_size         = 1
     lb_priority      = 2
     lb_type          = "private"
+    parameters       = []
   }
   user = {
     instance_type   =  "t2.micro"
@@ -126,6 +128,7 @@ apps = {
     min_size         = 1
     lb_priority      = 3
     lb_type          = "private"
+    parameters       = []
   }
   cart = {
     instance_type   =  "t2.micro"
@@ -135,6 +138,7 @@ apps = {
     min_size         = 1
     lb_priority      = 4
     lb_type          = "private"
+    parameters       = []
   }
   shipping = {
     instance_type   =  "t2.micro"
@@ -144,6 +148,7 @@ apps = {
     min_size         = 1
     lb_priority      = 5
     lb_type          = "private"
+    parameters       = []
   }
   payment = {
     instance_type   =  "t2.micro"
@@ -153,5 +158,6 @@ apps = {
     min_size         = 1
     lb_priority      = 6
     lb_type          = "private"
+    parameters       = ["rds"]
   }
 }
