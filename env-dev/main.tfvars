@@ -148,7 +148,7 @@ apps = {
     min_size         = 1
     lb_priority      = 5
     lb_type          = "private"
-    parameters       = []
+    parameters       = ["rds"]
   }
   payment = {
     instance_type   =  "t2.micro"
@@ -158,6 +158,6 @@ apps = {
     min_size         = 1
     lb_priority      = 6
     lb_type          = "private"
-    parameters       = ["rds"]
+    parameters       = ["rabbitmq"]
   }
 }
