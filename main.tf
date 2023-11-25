@@ -3,7 +3,7 @@ module "vpc" {
     source = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
     cidr = each.value["cidr"]
     subnets = each.value["subnets"]
-    vpc_default_vpc_id = var.vpc_default_vpc_id
+    default_vpc_id = var.default_vpc_id
     default_vpc_cidr = var.default_vpc_cidr
     default_vpc_route_table_id = var.default_vpc_route_table_id
     tags                       = var.tags
@@ -16,7 +16,7 @@ module "alb" {
     lb_type              = each.value["lb_type"]
     internal             = each.value["internal"]
     sg_ingress_cidr      = each.value["sg_ingress_cidr"]
-    vpc_id               = each.value["internal"] ? local.vpc_id : var.vpc_default_vpc_id
+    vpc_id               = each.value["internal"] ? local.vpc_id : var.default_vpc_id
     subnets              = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
     for_each             = var.alb
     tags                 = var.tags
@@ -24,7 +24,7 @@ module "alb" {
     sg_port              = each.value["sg_port"]
 }
 
-/*
+
 module "docdb" {
     source               = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
     tags                 = var.tags
@@ -98,7 +98,6 @@ module "rabbitmq" {
     kms_key_id       = var.kms_key_id
 
 }
-*/
 
 
 module "app" {
@@ -107,7 +106,7 @@ module "app" {
     env    =  var.env
     zone_id =  var.zone_id
     ssh_ingress_cidr = var.ssh_ingress_cidr
-    vpc_default_vpc_id = var.vpc_default_vpc_id
+    default_vpc_id = var.default_vpc_id
 
     for_each = var.apps
     component = each.key
