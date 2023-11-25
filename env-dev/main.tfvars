@@ -5,7 +5,7 @@ default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id                    = "Z0929615AH1MSD5PXATC"
 env                        = "dev"
 ssh_ingress_cidr           = ["172.31.39.31/32"]
-acm_certificate_arn        = ["arn:aws:acm:us-east-1:467609026719:certificate/c386eb5f-13dc-485a-91db-6a2854763326"]
+acm_certificate_arn        = "arn:aws:acm:us-east-1:467609026719:certificate/c386eb5f-13dc-485a-91db-6a2854763326"
 kms_key_id                 = "arn:aws:kms:us-east-1:467609026719:key/121b186a-8343-4661-bbc6-0f290307fa19"
 
 
