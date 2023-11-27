@@ -14,6 +14,7 @@ variable "apps" {}
 variable "ssh_ingress_cidr" {}
 variable "kms_key_id" {}
 variable "acm_certificate_arn" {}
+variable "monitoring_ingress_cidr" {}
 
 
 
