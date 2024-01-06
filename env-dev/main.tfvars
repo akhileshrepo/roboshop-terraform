@@ -1,3 +1,16 @@
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 ###This is default values
 default_vpc_id             = "vpc-06b432e74a6c1b5c5"
 default_vpc_cidr           = "172.31.0.0/16"
@@ -176,3 +189,4 @@ apps = {
     tags             = {}
   }
 }
+*/
