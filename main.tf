@@ -1,4 +1,27 @@
 
+
+
+terraform {
+  backend "s3" {}
+}
+
+variable "test" {}
+
+output "test" {
+  value = var.test
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 module "vpc" {
     source = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
