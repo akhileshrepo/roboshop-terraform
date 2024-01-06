@@ -4,6 +4,15 @@
 
 
 
+variable "test" {
+  default = "hello from terraform"
+
+}
+
+output "testing" {
+  value = var.test
+}
+
 
 
 

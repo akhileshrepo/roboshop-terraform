@@ -1,3 +1,5 @@
+
+/*
 variable "vpc" {}
 variable "default_vpc_id" {}
 variable "default_vpc_cidr" {}
@@ -16,5 +18,5 @@ variable "kms_key_id" {}
 variable "acm_certificate_arn" {}
 variable "monitoring_ingress_cidr" {}
 
-
+*/
 
