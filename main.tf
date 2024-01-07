@@ -1,8 +1,7 @@
 module "components" {
 
-  for_each = var.components
-
   source          = "git::https://github.com/akhileshrepo/tf-module-basic-test.git"
+  for_each = var.components
   zone_id         = var.zone_id
   security_groups = var.security_groups
   name            = each.value["name"]
