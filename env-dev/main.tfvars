@@ -35,15 +35,16 @@ env = "dev"
 
 alb = {
   public = {
-    internal = false
-    lb_type = "application"
+    internal        = false
+    lb_type         = "application"
     sg_ingress_cidr = ["0.0.0.0/0"]
-    sg_port = 443
+    sg_port         = 443
   }
+
   private = {
-    internal = true
-    lb_type = "application"
+    internal        = true
+    lb_type         = "application"
     sg_ingress_cidr = ["172.31.0.0/16", "10.0.0.0/16"]
-    sg_port = 80
+    sg_port         = 80
   }
 }
