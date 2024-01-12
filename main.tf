@@ -47,6 +47,7 @@ module "docdb" {
 }
 
 
+/*
 
 module "rds" {
   source = "git::https://github.com/akhileshrepo/tf-module-rds.git"
@@ -87,7 +88,7 @@ module "elasticache" {
   num_cache_nodes         = each.value["num_cache_nodes"]
   engine_version         = each.value["engine_version"]
 }
-
+*/
 
 
 
