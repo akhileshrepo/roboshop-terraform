@@ -10,8 +10,6 @@ module "vpc" {
   env = var.env
 }
 
-
-
 /*
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
