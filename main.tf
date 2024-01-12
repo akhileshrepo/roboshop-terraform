@@ -30,7 +30,7 @@ module "alb" {
 
 
 module "docdb" {
-  source = "git::https://github.com/raghudevopsb74/tf-module-docdb.git"
+  source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
   tags   = var.tags
   env    = var.env
 
