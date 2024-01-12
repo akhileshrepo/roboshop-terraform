@@ -30,8 +30,13 @@ module "alb" {
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
 
-  for_each = var.docdb
-  tags = var.tags
-  env = var.env
-  subnet_ids = local.db_subnets
+  for_each                = var.docdb
+  tags                    = var.tags
+  env                     = var.env
+  subnet_ids              = local.db_subnets
+  backup_retention_period = each.value["backup_retention_period"]
+  preferred_backup_window = each.value["preferred_backup_window"]
+  skip_final_snapshot     = each.value["skip_final_snapshot"]
+  vpc_id                  = local.vpc_id
+  sg_ingress_cidr         = local.app_subnets_cidr
 }
