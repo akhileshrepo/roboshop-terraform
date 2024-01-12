@@ -24,3 +24,10 @@ module "alb" {
   sg_port = each.value["sg_port"]
 }
 
+module "docdb" {
+  source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
+
+  for_each = var.docdb
+  tags = var.tags
+  env = var.env
+}
