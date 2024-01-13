@@ -10,8 +10,8 @@ module "vpc" {
   env = var.env
 }
 
-
 /*
+
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
   for_each = var.alb
@@ -24,9 +24,9 @@ module "alb" {
   env = var.env
   sg_port = each.value["sg_port"]
 }
-*/
 
-/*
+
+
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -46,7 +46,7 @@ module "docdb" {
   instance_class         = each.value["instance_class"]
 }
 
-*/
+
 
 
 module "rds" {
@@ -69,8 +69,9 @@ module "rds" {
   instance_count       = each.value["instance_count"]
   instance_class       = each.value["instance_class"]
 }
+*/
 
-/*
+
 module "elasticache" {
   source = "git::https://github.com/akhileshrepo/tf-module-elasticache.git"
   tags   = var.tags
@@ -88,7 +89,7 @@ module "elasticache" {
   num_cache_nodes         = each.value["num_cache_nodes"]
   engine_version         = each.value["engine_version"]
 }
-*/
+
 
 
 
