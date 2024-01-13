@@ -26,7 +26,7 @@ module "alb" {
 }
 */
 
-
+/*
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -46,8 +46,8 @@ module "docdb" {
   instance_class         = each.value["instance_class"]
 }
 
+*/
 
-/*
 
 module "rds" {
   source = "git::https://github.com/akhileshrepo/tf-module-rds.git"
@@ -70,7 +70,7 @@ module "rds" {
   instance_class       = each.value["instance_class"]
 }
 
-
+/*
 module "elasticache" {
   source = "git::https://github.com/akhileshrepo/tf-module-elasticache.git"
   tags   = var.tags
