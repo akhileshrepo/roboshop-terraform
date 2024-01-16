@@ -26,7 +26,7 @@ module "alb" {
 }
 
 
-
+/*
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -106,21 +106,30 @@ module "rabbitmq" {
   ssh_ingress_cidr = var.ssh_ingress_cidr
 
 }
+*/
 
-module "apps" {
+module "app" {
   source = "git::https://github.com/akhileshrepo/tf-module-app.git"
+
   tags   = var.tags
   env    = var.env
   zone_id = var.zone_id
-
-  for_each = var.apps
-  component = each.name
-  port = each.value["port"]
-  sg_ingress_cidr = local.app_subnets_cidr
   ssh_ingress_cidr = var.ssh_ingress_cidr
 
+  for_each = var.apps
+  component = each.key
+  port = each.value["port"]
+  instance_type = each.value["instance_type"]
+  desired_capacity = each.value["desired_capacity"]
+  max_size = each.value["max_size"]
+  min_size = each.value["min_size"]
 
+
+  sg_ingress_cidr    = local.app_subnets_cidr
+  vpc_id             = local.vpc_id
+  subnet_ids         = local.app_subnets
 }
+
 
 
 
