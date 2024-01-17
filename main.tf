@@ -123,6 +123,10 @@ module "apps" {
   for_each = var.apps
   component = each.key
   port = each.value["port"]
+  instance_type = each.value["instance_type"]
+  min_size   = each.value["min_size"]
+  desired_capacity = each.value["desired_capacity"]
+  max_size = each.value["max_size"]
 
 
   sg_ingress_cidr  = local.app_subnets_cidr

@@ -110,5 +110,8 @@ apps = {
   frontend = {
     instance_type = "t2.micro"
     port = 80
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
   }
 }
