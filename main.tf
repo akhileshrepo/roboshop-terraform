@@ -11,7 +11,7 @@ module "vpc" {
 }
 
 
-
+/*
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
   for_each = var.alb
@@ -90,6 +90,8 @@ module "elasticache" {
   num_cache_nodes  = each.value["num_cache_nodes"]
   engine_version   = each.value["engine_version"]
 }
+*/
+
 
 module "rabbitmq" {
   source = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
