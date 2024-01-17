@@ -114,4 +114,39 @@ apps = {
     desired_capacity = 1
     max_size = 3
   }
+  catalogue = {
+    instance_type = "t2.micro"
+    port = 8080
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
+  }
+  user = {
+    instance_type = "t2.micro"
+    port = 8080
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
+  }
+  cart = {
+    instance_type = "t2.micro"
+    port = 8080
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
+  }
+  payment = {
+    instance_type = "t2.micro"
+    port = 8080
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
+  }
+  shipping = {
+    instance_type = "t2.micro"
+    port = 8080
+    min_size   = 1
+    desired_capacity = 1
+    max_size = 3
+  }
 }
