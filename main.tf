@@ -26,7 +26,7 @@ module "alb" {
 }
 
 
-/*
+
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -106,8 +106,9 @@ module "rabbitmq" {
   ssh_ingress_cidr = var.ssh_ingress_cidr
 
 }
-*/
 
+
+/*
 module "app" {
   source = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
@@ -123,6 +124,7 @@ module "app" {
   desired_capacity = each.value["desired_capacity"]
   max_size = each.value["max_size"]
   min_size = each.value["min_size"]
+  lb_priority = each.value["lb_priority"]
 
 
   sg_ingress_cidr    = local.app_subnets_cidr
@@ -130,7 +132,10 @@ module "app" {
   subnet_ids         = local.app_subnets
 
   alb_name = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name", null)
+  listener = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "arn", null)
 }
+
+*/
 
 
 
