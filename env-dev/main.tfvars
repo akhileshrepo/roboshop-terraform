@@ -25,6 +25,8 @@ default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 
 
+
+
 tags = {
   company_name = "ABC Tech"
   business_unit = "Ecommerce"
@@ -98,66 +100,4 @@ elasticache = {
   }
 }
 
-/*
-##RABBITMQ DATABASE
 
-rabbitmq = {
-  main = {
-    instance_type = "t2.micro"
-  }
-}
-
-##APPLICATION SETUP
-
-
-apps = {
-  frontend = {
-    instance_type = "t2.micro"
-    port = 80
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 1
-  }
-  catalogue = {
-    instance_type = "t2.micro"
-    port = 8080
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 2
-  }
-  user = {
-    instance_type = "t2.micro"
-    port = 8080
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 3
-  }
-  cart = {
-    instance_type = "t2.micro"
-    port = 8080
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 4
-  }
-  payment = {
-    instance_type = "t2.micro"
-    port = 8080
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 5
-  }
-  shipping = {
-    instance_type = "t2.micro"
-    port = 8080
-    desired_capacity = 1
-    max_size = 3
-    min_size = 1
-    lb_priority = 6
-  }
-}
-*/
