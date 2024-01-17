@@ -91,6 +91,7 @@ module "elasticache" {
   engine_version   = each.value["engine_version"]
 }
 
+/*
 module "rabbitmq" {
   source = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
   tags   = var.tags
@@ -108,7 +109,7 @@ module "rabbitmq" {
 }
 
 
-/*
+
 module "app" {
   source = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
