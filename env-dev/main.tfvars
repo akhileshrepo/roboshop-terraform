@@ -24,7 +24,7 @@ default_vpc_id = "vpc-06b432e74a6c1b5c5"
 default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id    = "Z0929615AH1MSD5PXATC"
-
+ssh_ingress_cidr = ["172.31.38.77/32"]
 
 
 tags = {
@@ -102,7 +102,13 @@ elasticache = {
 
 rabbitmq = {
   main = {
-    ssh_ingress_cidr = ["172.31.38.77/32"]
     instance_type  = "t2.micro"
+  }
+}
+
+apps = {
+  frontend = {
+    instance_type = "t2.micro"
+    port = 80
   }
 }

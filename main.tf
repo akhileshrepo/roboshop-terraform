@@ -11,7 +11,7 @@ module "vpc" {
 }
 
 
-/*
+
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
   for_each = var.alb
@@ -26,7 +26,7 @@ module "alb" {
 }
 
 
-
+/*
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -90,7 +90,7 @@ module "elasticache" {
   num_cache_nodes  = each.value["num_cache_nodes"]
   engine_version   = each.value["engine_version"]
 }
-*/
+
 
 
 module "rabbitmq" {
@@ -104,11 +104,31 @@ module "rabbitmq" {
   subnet_ids       = local.db_subnets
   vpc_id           = local.vpc_id
   sg_ingress_cidr  = local.app_subnets_cidr
-  ssh_ingress_cidr = each.value["ssh_ingress_cidr"]
+  ssh_ingress_cidr = var.ssh_ingress_cidr
   instance_type    = each.value["instance_type"]
 
 }
 
+*/
+
+module "apps" {
+  source  = "git::https://github.com/akhileshrepo/tf-module-app.git"
+
+  tags    = var.tags
+  env     = var.env
+  zone_id = var.zone_id
+  ssh_ingress_cidr = var.ssh_ingress_cidr
+
+
+  for_each = var.apps
+  component = each.key
+  port = each.value["port"]
+
+
+  sg_ingress_cidr  = local.app_subnets_cidr
+  vpc_id = local.vpc_id
+  subnet_ids       = local.app_subnets
+}
 
 
 
