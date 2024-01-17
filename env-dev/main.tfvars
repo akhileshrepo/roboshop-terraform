@@ -107,6 +107,7 @@ rabbitmq = {
   }
 }
 
+##APPLICATION SETUP
 
 /*
 apps = {
