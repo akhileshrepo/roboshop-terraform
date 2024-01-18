@@ -10,7 +10,7 @@ module "vpc" {
   env = var.env
 }
 
-
+/*
 
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
@@ -26,7 +26,7 @@ module "alb" {
 }
 
 
-/*
+*/
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -48,7 +48,7 @@ module "docdb" {
 
 
 
-
+/*
 module "rds" {
   source = "git::https://github.com/akhileshrepo/tf-module-rds.git"
   tags   = var.tags
@@ -109,7 +109,7 @@ module "rabbitmq" {
 
 }
 
-*/
+
 
 module "apps" {
   source  = "git::https://github.com/akhileshrepo/tf-module-app.git"
@@ -141,6 +141,6 @@ module "apps" {
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
 }
 
-
+*/
 
 
