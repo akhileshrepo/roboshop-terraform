@@ -111,7 +111,6 @@ module "rabbitmq" {
 
 
 
-/*
 
 module "apps" {
   depends_on = [module.alb, module.docdb, module.elasticache, module.rabbitmq, module.rds]
@@ -145,6 +144,5 @@ module "apps" {
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
 }
 
-*/
 
 
