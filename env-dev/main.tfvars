@@ -165,6 +165,6 @@ apps = {
     max_size = 3
     lb_priority = 6
     lb_type = "private"
-    parameters = []
+    parameters = ["rds"]
   }
 }
