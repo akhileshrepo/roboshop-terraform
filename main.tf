@@ -129,6 +129,7 @@ module "apps" {
   desired_capacity = each.value["desired_capacity"]
   max_size = each.value["max_size"]
   lb_priority =each.value["lb_priority"]
+  parameters = each.value["parameters"]
 
 
   sg_ingress_cidr  = local.app_subnets_cidr
