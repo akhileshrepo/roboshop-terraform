@@ -111,6 +111,8 @@ module "rabbitmq" {
 
 
 
+/*
+
 module "apps" {
   depends_on = [module.alb, module.docdb, module.elasticache, module.rabbitmq, module.rds]
   source  = "git::https://github.com/akhileshrepo/tf-module-app.git"
@@ -143,6 +145,6 @@ module "apps" {
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
 }
 
-
+*/
 
 
