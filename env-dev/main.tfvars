@@ -66,7 +66,7 @@ docdb = {
     engine_version          = "4.0.0"
     engine_family           = "docdb4.0"
     instance_count          = 1
-    instance_class          = "db.t3.medium"
+    instance_class          = "db.t2.medium"
   }
 }
 
@@ -83,7 +83,7 @@ rds = {
     preferred_backup_window  = "07:00-09:00"
     skip_final_snapshot     = true
     instance_count         = 1
-    instance_class          = "db.t3.small"
+    instance_class          = "db.t2.small"
   }
 }
 
@@ -95,7 +95,7 @@ elasticache = {
     family           = "redis6.x"
     port             = 6379
     engine           = "redis"
-    node_type        = "cache.t3.micro"
+    node_type        = "cache.t2.micro"
     num_cache_nodes  = 1
     engine_version   = "6.2"
   }
@@ -109,63 +109,63 @@ rabbitmq = {
 
 apps = {
   frontend = {
-    instance_type = "t2.micro"
-    port = 80
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 80
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 1
-    lb_type = "public"
-    parameters = []
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 1
+    lb_type          = "public"
+    parameters       = [""]
   }
   catalogue = {
-    instance_type = "t2.micro"
-    port = 8080
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 8080
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 2
-    lb_type = "private"
-    parameters = ["docdb"]
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 2
+    lb_type          = "private"
+    parameters       = ["docdb"]
   }
   user = {
-    instance_type = "t2.micro"
-    port = 8080
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 8080
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 3
-    lb_type = "private"
-    parameters = ["docdb"]
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 3
+    lb_type          = "private"
+    parameters       = ["docdb"]
   }
   cart = {
-    instance_type = "t2.micro"
-    port = 8080
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 8080
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 4
-    lb_type = "private"
-    parameters = []
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 4
+    lb_type          = "private"
+    parameters       = [""]
   }
   payment = {
-    instance_type = "t2.micro"
-    port = 8080
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 8080
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 5
-    lb_type = "private"
-    parameters = ["rabbitmq"]
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 5
+    lb_type          = "private"
+    parameters       = ["rabbitmq"]
   }
   shipping = {
-    instance_type = "t2.micro"
-    port = 8080
-    min_size   = 1
+    instance_type    = "t2.micro"
+    port             = 8080
     desired_capacity = 1
-    max_size = 3
-    lb_priority = 6
-    lb_type = "private"
-    parameters = ["rds"]
+    max_size         = 3
+    min_size         = 1
+    lb_priority      = 6
+    lb_type          = "private"
+    parameters       = ["rds"]
   }
 }
