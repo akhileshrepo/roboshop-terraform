@@ -121,7 +121,7 @@ module "apps" {
   ssh_ingress_cidr        = var.ssh_ingress_cidr
   default_vpc_id          = var.default_vpc_id
 
-
+  tags                    = merge(var.tags, each.value["tags"])
   for_each         = var.apps
   component        = each.key
   port             = each.value["port"]
