@@ -25,7 +25,7 @@ default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 zone_id    = "Z0929615AH1MSD5PXATC"
 ssh_ingress_cidr = ["172.31.38.77/32"]
-
+env = "dev"
 
 tags = {
   company_name = "ABC Tech"
@@ -35,7 +35,6 @@ tags = {
   created_by = "terraform"
 }
 
-env = "dev"
 
 
 
@@ -66,7 +65,7 @@ docdb = {
     engine_version          = "4.0.0"
     engine_family           = "docdb4.0"
     instance_count          = 1
-    instance_class          = "db.t2.medium"
+    instance_class          = "db.t3.medium"
   }
 }
 
@@ -83,7 +82,7 @@ rds = {
     preferred_backup_window  = "07:00-09:00"
     skip_final_snapshot     = true
     instance_count         = 1
-    instance_class          = "db.t2.small"
+    instance_class          = "db.t3.small"
   }
 }
 
@@ -95,7 +94,7 @@ elasticache = {
     family           = "redis6.x"
     port             = 6379
     engine           = "redis"
-    node_type        = "cache.t2.micro"
+    node_type        = "cache.t3.micro"
     num_cache_nodes  = 1
     engine_version   = "6.2"
   }
