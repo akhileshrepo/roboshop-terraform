@@ -1,3 +1,21 @@
+
+variable "test" {
+}
+
+output "test" {
+  value = var.test
+}
+
+
+
+
+
+
+
+
+/*
+
+
 module "vpc" {
   source   = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
   for_each = var.vpc
@@ -143,5 +161,5 @@ module "apps" {
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
   public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
 }
-
+*/
 

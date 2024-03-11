@@ -1,3 +1,43 @@
+
+
+
+test = "Hello from GCP"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
 ##VPC Network
 vpc = {
   main = {
@@ -175,3 +215,5 @@ apps = {
     tags             = {}
   }
 }
+
+*/
