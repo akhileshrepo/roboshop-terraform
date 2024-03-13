@@ -1,5 +1,4 @@
 security_groups = ["sg-0e9e01d2f78b0dd9a"]
-
 components = {
     frontend = {
       name          = "frontend"
