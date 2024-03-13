@@ -1,16 +1,13 @@
+module "components" {
+  source = "git::https://github.com/akhileshrepo/tf-module-basic-test.git"
 
-variable "test" {
+  for_each = var.components
+
+  instance_type    = each.value["instance_type"]
+  name             = each.value["name"]
+  zone_id          = var.zone_id
+  security_groups  = var.security_groups
 }
-
-output "test" {
-  value = var.test
-}
-
-
-
-
-
-
 
 
 /*
