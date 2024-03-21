@@ -11,7 +11,7 @@ module "vpc" {
   env                        = var.env
 }
 
-/*
+
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
 
@@ -25,4 +25,3 @@ module "alb" {
   subnets = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
   sg_port = each.value["sg_port"]
 }
-*/
