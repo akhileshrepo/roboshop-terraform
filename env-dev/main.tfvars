@@ -20,19 +20,18 @@ vpc = {
 
 alb = {
   public = {
-    internal = false
-    lb_type = "application"
+    internal        = false
+    lb_type         = "application"
     sg_ingress_cidr = ["0.0.0.0/0"]
-    sg_port = 80
+    sg_port         = 443
   }
 
   private = {
-    lb_type = "application"
-    internal = true
+    internal        = true
+    lb_type         = "application"
     sg_ingress_cidr = ["172.31.0.0/16", "10.0.0.0/16"]
-    sg_port = 80
+    sg_port         = 80
   }
-
 }
 
 
@@ -41,11 +40,11 @@ default_vpc_cidr = "172.31.0.0/16"
 default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 
 tags = {
-  company_name = "ABC Tech info"
-  business_unit = "Retail Americas"
-  project_name = "roboshop"
-  cost_center = "ecom_rs"
-  created_by = "terraform"
+  company_name  = "ABC Tech"
+  business_unit = "Ecommerce"
+  project_name  = "robotshop"
+  cost_center   = "ecom_rs"
+  created_by    = "terraform"
 }
 
 env = "dev"
