@@ -17,11 +17,6 @@ module "vpc" {
 
 
 
-
-
-
-
-
 /*
 module "vpc" {
   source = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
