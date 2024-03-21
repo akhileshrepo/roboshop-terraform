@@ -1,10 +1,10 @@
 
-/*
+
 output "vpc" {
   value = module.vpc
 }
-*/
 
-output "vpc" {
+
+output "subnets" {
   value = data.aws_subnets.subnets.ids
 }
