@@ -1,6 +1,44 @@
 module "vpc" {
   source = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
 
+  for_each = var.vpc
+  cidr = each.value["cidr"]
+  subnets = each.value["subnets"]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+module "vpc" {
+  source = "git::https://github.com/akhileshrepo/tf-module-vpc.git"
+
   for_each                   = var.vpc
   cidr                       = each.value["cidr"]
   subnets                    = each.value["subnets"]
@@ -25,3 +63,4 @@ module "alb" {
   subnets = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
   sg_port = each.value["sg_port"]
 }
+*/
