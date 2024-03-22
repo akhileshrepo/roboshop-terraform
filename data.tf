@@ -1,6 +1,3 @@
-
-
-
 data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
