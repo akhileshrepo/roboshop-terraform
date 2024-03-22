@@ -1,6 +1,6 @@
 
 
-/*
+
 data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
@@ -13,4 +13,3 @@ data "aws_ami" "ami" {
   name_regex  = "Centos-8-DevOps-Practice"
   owners      = ["973714476881"]
 }
-*/
