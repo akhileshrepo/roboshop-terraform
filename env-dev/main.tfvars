@@ -35,21 +35,6 @@ alb = {
 }
 
 
-default_vpc_id = "vpc-06b432e74a6c1b5c5"
-default_vpc_cidr = "172.31.0.0/16"
-default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
-
-tags = {
-  company_name  = "ABC Tech"
-  business_unit = "Ecommerce"
-  project_name  = "robotshop"
-  cost_center   = "ecom_rs"
-  created_by    = "terraform"
-}
-
-env = "dev"
-
-
 docdb = {
   main = {
     backup_retention_period = 5
@@ -89,9 +74,19 @@ elasticache = {
   }
 }
 
+default_vpc_id = "vpc-06b432e74a6c1b5c5"
+default_vpc_cidr = "172.31.0.0/16"
+default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
 
+tags = {
+  company_name  = "ABC Tech"
+  business_unit = "Ecommerce"
+  project_name  = "robotshop"
+  cost_center   = "ecom_rs"
+  created_by    = "terraform"
+}
 
-
+env = "dev"
 
 
 
