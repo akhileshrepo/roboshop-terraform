@@ -64,18 +64,38 @@ docdb = {
 
 rds = {
   main = {
-    rds_type           = "mysql"
-    db_port            = 3306
-    engine_family      =  "aurora-mysql-5.7"                     ##you can find the value from parameter group
-    engine             = "aurora-mysql"
-    engine_version     = "5.7.mysql_aurora.2.11.3"
-    backup_retention_period    = 5
-    preferred_backup_window    = "07:00-09:00"
-    skip_final_snapshot     = true
-    instance_count          = 1
-    instance_class          = "db.t3.small"
+    rds_type                     = "mysql"
+    db_port                      = 3306
+    engine_family                =  "aurora-mysql-5.7"                     ##you can find the value from parameter group
+    engine                       = "aurora-mysql"
+    engine_version               = "5.7.mysql_aurora.2.11.3"
+    backup_retention_period      = 5
+    preferred_backup_window      = "07:00-09:00"
+    skip_final_snapshot          = true
+    instance_count               = 1
+    instance_class               = "db.t3.small"
   }
 }
+
+
+elasticache = {
+  main = {
+    elasticache_type = "redis"
+    family           = "redis6.x"
+    port             = 6379
+    engine           = "redis"
+    node_type        = "cache.t3.micro"
+    num_cache_nodes  = 1
+    engine_version   = "6.2"
+  }
+}
+
+
+
+
+
+
+
 
 
 
