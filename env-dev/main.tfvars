@@ -77,7 +77,6 @@ rds = {
   }
 }
 
-
 elasticache = {
   main = {
     elasticache_type = "redis"
@@ -89,7 +88,6 @@ elasticache = {
     engine_version   = "6.2"
   }
 }
-
 
 
 
