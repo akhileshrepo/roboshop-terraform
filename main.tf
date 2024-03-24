@@ -92,7 +92,7 @@ module "elasticache" {
 */
 
 module "rabbitmq" {
-  source  = "git::https://github.com/raghudevopsb74/tf-module-rabbitmq.git"
+  source  = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
   tags    = var.tags
   env     = var.env
   zone_id = var.zone_id
