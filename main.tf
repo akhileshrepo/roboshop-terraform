@@ -11,7 +11,7 @@ module "vpc" {
   env                        = var.env
 }
 
-/*
+
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
 
@@ -26,7 +26,7 @@ module "alb" {
   sg_port = each.value["sg_port"]
 }
 
-
+/*
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
   tags = var.tags
@@ -125,6 +125,8 @@ module "app" {
   sg_ingress_cidr  = local.app_subnets_cidr
   vpc_id           = local.vpc_id
   subnet_ids       = local.app_subnets
+
+  alb_name = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name", null)
 }
 
 
