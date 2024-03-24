@@ -80,7 +80,13 @@ rabbitmq = {
   }
 }
 
+apps = {
+  frontend = {
+    instance_type = "t3.micro"
+    port = 80
+  }
 
+}
 
 
 default_vpc_id = "vpc-06b432e74a6c1b5c5"
