@@ -11,7 +11,7 @@ module "vpc" {
   env                        = var.env
 }
 
-
+/*
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
 
@@ -89,6 +89,7 @@ module "elasticache" {
   engine_version   = each.value["engine_version"]
 }
 
+*/
 
 module "rabbitmq" {
   source = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
