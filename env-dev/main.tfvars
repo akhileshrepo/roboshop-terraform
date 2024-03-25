@@ -1,3 +1,19 @@
+default_vpc_id                  = "vpc-06b432e74a6c1b5c5"
+default_vpc_cidr                = "172.31.0.0/16"
+default_vpc_route_table_id      = "rtb-0056ec6a7d1ceee5b"
+zone_id                         = "Z0929615AH1MSD5PXATC"
+ssh_ingress_cidr                = ["172.31.86.135/32"]
+env                             = "dev"
+
+tags = {
+  company_name        = "ABC Tech"
+  business_unit       = "Ecommerce"
+  project_name        = "robotshop"
+  cost_center         = "ecom_rs"
+  created_by          = "terraform"
+}
+
+##VPC
 vpc = {
   main = {
     cidr = "10.0.0.0/16"
@@ -18,6 +34,7 @@ vpc = {
   }
 }
 
+##ALB
 alb = {
   public = {
     internal        = false
@@ -34,7 +51,7 @@ alb = {
   }
 }
 
-
+##MONGODB
 docdb = {
   main = {
     backup_retention_period = 5
@@ -47,6 +64,7 @@ docdb = {
   }
 }
 
+##MYSQL
 rds = {
   main = {
     rds_type                = "mysql"
@@ -62,6 +80,7 @@ rds = {
   }
 }
 
+##REDIS
 elasticache = {
   main = {
     elasticache_type = "redis"
@@ -74,6 +93,7 @@ elasticache = {
   }
 }
 
+##RABBITMQ
 rabbitmq = {
   main = {
     instance_type = "t3.small"
@@ -82,48 +102,48 @@ rabbitmq = {
 
 apps = {
   frontend = {
-    instance_type = "t3.micro"
-    port = 80
+    instance_type      = "t3.micro"
+    port               = 80
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
     lb_priority        = 1
   }
   catalogue = {
-    instance_type = "t3.micro"
-    port = 8080
+    instance_type      = "t3.micro"
+    port               = 8080
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
     lb_priority        = 2
   }
   user = {
-    instance_type = "t3.micro"
-    port = 8080
+    instance_type      = "t3.micro"
+    port               = 8080
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
     lb_priority        = 3
   }
   cart = {
-    instance_type = "t3.micro"
-    port = 8080
+    instance_type      = "t3.micro"
+    port               = 8080
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
     lb_priority        = 4
   }
   shipping = {
-    instance_type = "t3.micro"
-    port = 8080
+    instance_type      = "t3.micro"
+    port               = 8080
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
     lb_priority        = 5
   }
   payment = {
-    instance_type = "t3.micro"
-    port = 8080
+    instance_type      = "t3.micro"
+    port               = 8080
     desired_capacity   = 1
     max_size           = 3
     min_size           = 1
@@ -132,21 +152,9 @@ apps = {
 }
 
 
-default_vpc_id = "vpc-06b432e74a6c1b5c5"
-default_vpc_cidr = "172.31.0.0/16"
-default_vpc_route_table_id = "rtb-0056ec6a7d1ceee5b"
-zone_id = "Z0929615AH1MSD5PXATC"
-ssh_ingress_cidr           = ["172.31.86.135/32"]
 
-tags = {
-  company_name  = "ABC Tech"
-  business_unit = "Ecommerce"
-  project_name  = "robotshop"
-  cost_center   = "ecom_rs"
-  created_by    = "terraform"
-}
 
-env = "dev"
+
 
 
 
