@@ -111,7 +111,7 @@ module "rabbitmq" {
 }
 
 
-/*
+
 module "app" {
   source  = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
@@ -140,7 +140,7 @@ module "app" {
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
   public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
 }
-*/
+
 
 
 
