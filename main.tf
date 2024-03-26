@@ -12,7 +12,6 @@ module "vpc" {
   subnets                    = each.value["subnets"]
 }
 
-
 module "alb" {
   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
 
@@ -27,7 +26,6 @@ module "alb" {
   subnets             = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
   sg_port             = each.value["sg_port"]
 }
-
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -135,6 +133,8 @@ module "app" {
   max_size                  = each.value["max_size"]
   min_size                  = each.value["min_size"]
   lb_priority               = each.value["lb_priority"]
+
+
   private_alb_name = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name", null)
   public_alb_name  = lookup(lookup(lookup(module.alb, "public", null), "alb", null), "dns_name", null)
   private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
