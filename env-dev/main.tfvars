@@ -4,6 +4,8 @@ default_vpc_route_table_id      = "rtb-0056ec6a7d1ceee5b"
 zone_id                         = "Z0929615AH1MSD5PXATC"
 ssh_ingress_cidr                = ["172.31.86.135/32"]
 env                             = "dev"
+acm_certificate_arn             = "arn:aws:acm:us-east-1:467609026719:certificate/34125940-a119-4a95-98ff-afa0e5ac1c7c"
+
 
 tags = {
   company_name        = "ABC Tech"

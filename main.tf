@@ -25,6 +25,7 @@ module "alb" {
   vpc_id              = each.value["internal"] ? local.vpc_id : var.default_vpc_id
   subnets             = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
   sg_port             = each.value["sg_port"]
+  acm_certificate_arn = var.acm_certificate_arn
 }
 
 /*
@@ -110,7 +111,7 @@ module "rabbitmq" {
 
   instance_type             = each.value["instance_type"]
 }
-*/
+
 
 
 module "app" {
@@ -143,7 +144,7 @@ module "app" {
 }
 
 
-
+*/
 
 
 
