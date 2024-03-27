@@ -111,7 +111,7 @@ module "rabbitmq" {
 
   instance_type             = each.value["instance_type"]
 }
-
+*/
 
 
 module "app" {
@@ -123,6 +123,7 @@ module "app" {
   ssh_ingress_cidr          = var.ssh_ingress_cidr
   for_each                  = var.apps
   default_vpc_id             = var.default_vpc_id
+  az                        =  var.az
 
   sg_ingress_cidr           = local.app_subnets_cidr
   vpc_id                    = local.vpc_id
@@ -144,7 +145,31 @@ module "app" {
 }
 
 
-*/
+
+
+#  az                      = var.az
+
+#
+#  for_each         = var.apps
+#  component        = each.key
+#  port             = each.value["port"]
+#  instance_type    = each.value["instance_type"]
+#  desired_capacity = each.value["desired_capacity"]
+#  max_size         = each.value["max_size"]
+#  min_size         = each.value["min_size"]
+#  lb_priority      = each.value["lb_priority"]
+#  parameters       = each.value["parameters"]
+#
+#  sg_ingress_cidr = local.app_subnets_cidr
+#  vpc_id          = local.vpc_id
+#  subnet_ids      = local.app_subnets
+#
+#  private_alb_name = lookup(lookup(lookup(module.alb, "private", null), "alb", null), "dns_name", null)
+#  public_alb_name  = lookup(lookup(lookup(module.alb, "public", null), "alb", null), "dns_name", null)
+#  private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
+#  public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
+#
+
 
 
 
