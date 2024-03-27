@@ -27,6 +27,7 @@ module "alb" {
   sg_port             = each.value["sg_port"]
 }
 
+/*
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
 
@@ -109,7 +110,7 @@ module "rabbitmq" {
 
   instance_type             = each.value["instance_type"]
 }
-
+*/
 
 
 module "app" {
