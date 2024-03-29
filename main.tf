@@ -125,6 +125,7 @@ module "app" {
   for_each                  = var.apps
   default_vpc_id             = var.default_vpc_id
   az                        =  var.az
+  monitoring_ingress_cidr   = var.monitoring_ingress_cidr
 
   sg_ingress_cidr           = local.app_subnets_cidr
   vpc_id                    = local.vpc_id
