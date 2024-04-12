@@ -117,7 +117,7 @@ apps = {
     tags             = { Monitor_Nginx = "yes" }
   }
   catalogue = {
-    instance_type    = "t3.micro"
+    instance_type    = "t3.small"
     port             = 8080
     desired_capacity = 1
     max_size         = 3
