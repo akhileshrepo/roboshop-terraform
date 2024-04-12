@@ -29,7 +29,6 @@ module "alb" {
   acm_certificate_arn = var.acm_certificate_arn
 }
 
-/*
 
 module "docdb" {
   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -114,10 +113,10 @@ module "rabbitmq" {
   instance_type             = each.value["instance_type"]
 }
 
-*/
+
 
 module "app" {
-  #depends_on = [module.alb, module.docdb, module.elasticache, module.rabbitmq, module.rds]
+  depends_on = [module.alb, module.docdb, module.elasticache, module.rabbitmq, module.rds]
   source  = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
   tags                      = merge(var.tags, each.value["tags"])
