@@ -7,6 +7,8 @@ env                             = "dev"
 acm_certificate_arn             = "arn:aws:acm:us-east-1:467609026719:certificate/34125940-a119-4a95-98ff-afa0e5ac1c7c"
 az                              = ["us-east-1a", "us-east-1b"]
 monitoring_ingress_cidr         = ["172.31.33.30/32"]
+kms_key_id                      = ""     ##arn
+
 
 tags = {
   company_name        = "ABC Tech"

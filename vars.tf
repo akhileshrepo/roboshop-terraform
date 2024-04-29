@@ -15,3 +15,4 @@ variable "apps" {}
 variable "acm_certificate_arn" {}
 variable "az" {}
 variable "monitoring_ingress_cidr" {}
+variable "kms_key_id" {}
