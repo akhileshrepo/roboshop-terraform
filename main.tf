@@ -125,9 +125,10 @@ module "app" {
   zone_id                   = var.zone_id
   ssh_ingress_cidr          = var.ssh_ingress_cidr
   for_each                  = var.apps
-  default_vpc_id             = var.default_vpc_id
+  default_vpc_id            = var.default_vpc_id
   az                        =  var.az
   monitoring_ingress_cidr   = var.monitoring_ingress_cidr
+  kms_key_id                = var.kms_key_id
 
   sg_ingress_cidr           = local.app_subnets_cidr
   vpc_id                    = local.vpc_id
