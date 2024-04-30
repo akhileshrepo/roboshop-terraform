@@ -108,7 +108,7 @@ rabbitmq = {
 
 apps = {
   frontend = {
-    instance_type    = "t3.small"
+    instance_type    = "t3.micro"
     port             = 80
     desired_capacity = 1
     max_size         = 3
@@ -119,7 +119,7 @@ apps = {
     tags             = { Monitor_Nginx = "yes" }
   }
   catalogue = {
-    instance_type    = "t3.small"
+    instance_type    = "t3.micro"
     port             = 8080
     desired_capacity = 1
     max_size         = 3
@@ -174,7 +174,6 @@ apps = {
     tags             = {}
   }
 }
-
 
 
 
