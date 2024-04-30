@@ -51,7 +51,7 @@ alb = {
   private = {
     internal        = true
     lb_type         = "application"
-    sg_ingress_cidr = ["172.31.23.1/16", "10.0.0.0/16"]
+    sg_ingress_cidr = ["172.31.23.1/32", "10.0.0.0/16"]
     sg_port         = 80
   }
 }
