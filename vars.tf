@@ -16,3 +16,8 @@
 #variable "az" {}
 #variable "monitoring_ingress_cidr" {}
 #variable "kms_key_id" {}
+
+
+variable "zone_id" {}
+variable "security_group" {}
+variable "components" {}

@@ -148,6 +148,15 @@
 #  public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
 #}
 
+module "components" {
+
+  for_each          = var.components
+  source            = "git::https://github.com/akhileshrepo/tf-module-basic-test.git"
+  name              = each.value["name"]
+  instance_type     = each.value["instance_type"]
+  security_group    = var.security_group
+  zone_id           = var.zone_id
+}
 
 
 
