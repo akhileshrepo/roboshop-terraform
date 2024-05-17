@@ -176,7 +176,7 @@
 #}
 
 
-security_group = ["sg-0e9e01d2f78b0dd9a"]
+security_groups = ["sg-0e9e01d2f78b0dd9a"]
 zone_id = "Z0929615AH1MSD5PXATC"
 components = {
   frontend = {

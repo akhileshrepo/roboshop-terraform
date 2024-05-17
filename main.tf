@@ -154,7 +154,7 @@ module "components" {
   source            = "git::https://github.com/akhileshrepo/tf-module-basic-test.git"
   name              = each.value["name"]
   instance_type     = each.value["instance_type"]
-  security_group    = var.security_group
+  security_groups    = var.security_groups
   zone_id           = var.zone_id
 }
 

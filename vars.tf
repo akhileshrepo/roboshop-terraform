@@ -19,5 +19,5 @@
 
 
 variable "zone_id" {}
-variable "security_group" {}
+variable "security_groups" {}
 variable "components" {}
