@@ -178,7 +178,7 @@
 
 security_group = ["sg-0e9e01d2f78b0dd9a"]
 zone_id = "Z0929615AH1MSD5PXATC"
-componets = {
+components = {
   frontend = {
     name = "frontend"
     instance_type = "t3.micro"
