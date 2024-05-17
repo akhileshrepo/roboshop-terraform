@@ -176,8 +176,6 @@
 #}
 
 
-test = "hello from dev"
-
 
 
 

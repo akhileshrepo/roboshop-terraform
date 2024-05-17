@@ -148,11 +148,7 @@
 #  public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
 #}
 
-variable "test" {}
 
-output "test" {
-  value = var.test
-}
 
 
 
