@@ -65,7 +65,7 @@
 #    engine_version          = "4.0.0"
 #    engine_family           = "docdb4.0"
 #    instance_count          = 1
-#    instance_class          = "db.t3.medium"
+#    instance_class          = "db.t2.medium"
 #  }
 #}
 #
@@ -81,7 +81,7 @@
 #    preferred_backup_window = "07:00-09:00"
 #    skip_final_snapshot     = true
 #    instance_count          = 1
-#    instance_class          = "db.t3.small"
+#    instance_class          = "db.t2.small"
 #  }
 #}
 #
@@ -92,7 +92,7 @@
 #    family           = "redis6.x"
 #    port             = 6379
 #    engine           = "redis"
-#    node_type        = "cache.t3.micro"
+#    node_type        = "cache.t2.micro"
 #    num_cache_nodes  = 1
 #    engine_version   = "6.2"
 #  }
@@ -101,14 +101,14 @@
 ###RABBITMQ
 #rabbitmq = {
 #  main = {
-#    instance_type = "t3.small"
+#    instance_type = "t2.small"
 #  }
 #}
 #
 #
 #apps = {
 #  frontend = {
-#    instance_type    = "t3.micro"
+#    instance_type    = "t2.micro"
 #    port             = 80
 #    desired_capacity = 1
 #    max_size         = 3
@@ -119,7 +119,7 @@
 #    tags             = { Monitor_Nginx = "yes" }
 #  }
 #  catalogue = {
-#    instance_type    = "t3.micro"
+#    instance_type    = "t2.micro"
 #    port             = 8080
 #    desired_capacity = 1
 #    max_size         = 3
@@ -130,7 +130,7 @@
 #    tags             = {}
 #  }
 #  user = {
-#    instance_type    = "t3.micro"
+#    instance_type    = "t2.micro"
 #    port             = 8080
 #    desired_capacity = 1
 #    max_size         = 3
@@ -141,7 +141,7 @@
 #    tags             = {}
 #  }
 #  cart = {
-#    instance_type    = "t3.micro"
+#    instance_type    = "t2.micro"
 #    port             = 8080
 #    desired_capacity = 1
 #    max_size         = 3
@@ -152,7 +152,7 @@
 #    tags             = {}
 #  }
 #  payment = {
-#    instance_type    = "t3.micro"
+#    instance_type    = "t2.micro"
 #    port             = 8080
 #    desired_capacity = 1
 #    max_size         = 3
@@ -181,43 +181,43 @@ zone_id = "Z0929615AH1MSD5PXATC"
 components = {
   frontend = {
     name = "frontend"
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
   }
   mongodb = {
     name = "mongodb"
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
   }
   catalogue = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "catalogue"
   }
   redis = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "redis"
   }
   user = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "user"
   }
   cart = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "cart"
   }
   rabbitmq = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "rabbitmq"
   }
   shipping = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "shipping"
   }
   mysql = {
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
     name = "mysql"
   }
   payment = {
     name = "payment"
-    instance_type = "t3.micro"
+    instance_type = "t2.micro"
   }
 }
 
