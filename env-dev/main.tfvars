@@ -35,8 +35,8 @@ components = {
     name = "rabbitmq"
     instance_type = "t3.micro"
   }
-  shipping = {
-    name = "shipping"
+  payment = {
+    name = "payment"
     instance_type = "t3.micro"
   }
 }
