@@ -1,3 +1,3 @@
 output "vpc" {
-  value = module.vpc
+  value = local.app_subnets
 }
