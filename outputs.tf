@@ -1,3 +1,3 @@
-output "vpc" {
-  value = local.app_subnets
-}
+# output "vpc" {
+#   value = local.app_subnets
+# }
