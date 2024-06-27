@@ -3,4 +3,8 @@ module "vpc" {
 
   for_each                   = var.vpc
   cidr                       = each.value["cidr"]
+
+  tags = {
+    Name = "Dev-vpc"
+  }
 }
