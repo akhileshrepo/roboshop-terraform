@@ -10,3 +10,17 @@ module "vpc" {
   tags                       = var.tags
   env                        = var.env
 }
+
+module "alb" {
+  source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
+
+  for_each                   = var.alb
+  lb_type                    = each.value["lb_type"]
+  internal                   = each.value["internal"]
+  sg_ingress_cidr            = each.value["sg_ingress_cidr"]
+  vpc_id                     = each.value["internal"] ? local.vpc_id : var.default_vpc_id
+  subnets                    = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
+  tags                       = var.tags
+  env                        = var.env
+  sg_port                    = each.value["sg_port"]
+}
