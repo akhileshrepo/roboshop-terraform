@@ -35,4 +35,8 @@ module "docdb" {
   backup_retention_period   = var.backup_retention_period
   preferred_backup_window   = var.preferred_backup_window
   skip_final_snapshot       = var.skip_final_snapshot
+  vpc_id                    = local.vpc_id
+  sg_ingress_cidr           = local.app_subnets_cidr
+  engine_version            = each.value["engine_version"]
 }
+
