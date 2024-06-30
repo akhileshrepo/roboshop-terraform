@@ -34,13 +34,13 @@ tags = {
 alb = {
   public = {
     internal            = false
-    load_balancer_type  = "application"
+    lb_type             = "application"
     sg_ingress_cidr     = ["0.0.0.0/0"]
     sg_port             = 80
   }
   private = {
     internal            = true
-    load_balancer_type  = "application"
+    lb_type             = "application"
     sg_ingress_cidr     = ["172.31.0.0/16", "10.0.0.0/16"]
     sg_port             = 80
   }
