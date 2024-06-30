@@ -32,4 +32,7 @@ module "docdb" {
 
   for_each                  = var.docdb
   subnet_ids                = local.db_subnets
+  backup_retention_period   = var.backup_retention_period
+  preferred_backup_window   = var.preferred_backup_window
+  skip_final_snapshot       = var.skip_final_snapshot
 }

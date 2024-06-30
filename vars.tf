@@ -6,5 +6,7 @@ variable "tags" {}
 variable "env" {}
 variable "alb" {}
 variable "docdb" {}
-
+variable "backup_retention_period" {}
+variable "preferred_backup_window" {}
+variable "skip_final_snapshot" {}
 
