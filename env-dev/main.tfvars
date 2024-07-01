@@ -55,5 +55,6 @@ docdb = {
     engine_family           = "docdb4.0"
     instance_class          = "db.t3.medium"
     instance_count          = 2
+
   }
 }
