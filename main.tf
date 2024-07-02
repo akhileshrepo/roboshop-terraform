@@ -65,3 +65,23 @@ module "rds" {
   skip_final_snapshot   = each.value["skip_final_snapshot"]
 }
 
+module "elasticache" {
+  source                          = "git::https://github.com/akhileshrepo/tf-module-elasticache.git"
+  tags                            = var.tags
+  env                             = var.env
+
+  for_each                        = var.elasticache
+  elasticache_type                = each.value["elasticache_type"]
+  vpc_id                          = local.vpc_id
+  sg_ingress_cidr                 = local.app_subnets_cidr
+  subnet_ids                      = local.app_subnets
+  family                          = each.value["family"]
+  port                            = each.value["port"]
+  engine                          = each.value["engine"]
+  node_type                       = each.value["node_type"]
+  num_cache_nodes                 = each.value["num_cache_nodes"]
+  engine_version                  = each.value["engine_version"]
+}
+
+
+
