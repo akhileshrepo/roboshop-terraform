@@ -102,6 +102,7 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 1
+    lb_type          = "public"
   }
   catalogue = {
     instance_type = "t3.micro"
@@ -110,6 +111,7 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 2
+    lb_type          = "private"
   }
   user = {
     instance_type = "t3.micro"
@@ -118,6 +120,7 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 3
+    lb_type          = "private"
   }
   cart = {
     instance_type = "t3.micro"
@@ -126,6 +129,7 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 4
+    lb_type          = "private"
   }
   payment = {
     instance_type = "t3.micro"
@@ -134,6 +138,7 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 5
+    lb_type          = "private"
   }
   shipping = {
     instance_type = "t3.micro"
@@ -142,5 +147,6 @@ apps = {
     min_size         = 1
     max_size         = 3
     lb_priority      = 6
+    lb_type          = "private"
   }
 }
