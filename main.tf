@@ -11,19 +11,19 @@ module "vpc" {
   env                        = var.env
 }
 
-# module "alb" {
-#   source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
-#
-#   for_each                   = var.alb
-#   lb_type                    = each.value["lb_type"]
-#   internal                   = each.value["internal"]
-#   sg_ingress_cidr            = each.value["sg_ingress_cidr"]
-#   vpc_id                     = each.value["internal"] ? local.vpc_id : var.default_vpc_id
-#   subnets                    = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
-#   tags                       = var.tags
-#   env                        = var.env
-#   sg_port                    = each.value["sg_port"]
-# }
+module "alb" {
+  source = "git::https://github.com/akhileshrepo/tf-module-alb.git"
+
+  for_each                   = var.alb
+  lb_type                    = each.value["lb_type"]
+  internal                   = each.value["internal"]
+  sg_ingress_cidr            = each.value["sg_ingress_cidr"]
+  vpc_id                     = each.value["internal"] ? local.vpc_id : var.default_vpc_id
+  subnets                    = each.value["internal"] ? local.app_subnets : data.aws_subnets.subnets.ids
+  tags                       = var.tags
+  env                        = var.env
+  sg_port                    = each.value["sg_port"]
+}
 
 # module "docdb" {
 #   source = "git::https://github.com/akhileshrepo/tf-module-docdb.git"
@@ -83,17 +83,30 @@ module "vpc" {
 #   engine_version                  = each.value["engine_version"]
 # }
 
+#
+# module "rabbitmq" {
+#   source                          = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
+#   tags                            = var.tags
+#   env                             = var.env
+#
+#   for_each                        = var.rabbitmq
+#   subnet_ids                      = local.db_subnets
+#   vpc_id                          = local.vpc_id
+#   sg_ingress_cidr                 = local.app_subnets_cidr
+#   instance_type                   = each.value["instance_type"]
+#   ssh_ingress_cidr                = var.ssh_ingress_cidr
+#   zone_id                         = var.zone_id
+# }
 
-module "rabbitmq" {
-  source                          = "git::https://github.com/akhileshrepo/tf-module-rabbitmq.git"
+module "app" {
+  source                          = "git::https://github.com/akhileshrepo/tf-module-app.git"
   tags                            = var.tags
   env                             = var.env
-
-  for_each                        = var.rabbitmq
-  subnet_ids                      = local.db_subnets
-  vpc_id                          = local.vpc_id
-  sg_ingress_cidr                 = local.app_subnets_cidr
-  instance_type                   = each.value["instance_type"]
-  ssh_ingress_cidr                = each.value["ssh_ingress_cidr"]
   zone_id                         = var.zone_id
+
+  for_each                        = var.apps
+  component                       = each.name
+  port                            = each.value["port"]
+  sg_ingress_cidr                 = local.app_subnets_cidr
+  ssh_ingress_cidr                = var.ssh_ingress_cidr
 }

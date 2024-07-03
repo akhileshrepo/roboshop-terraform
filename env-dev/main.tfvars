@@ -1,3 +1,19 @@
+default_vpc_id              = "vpc-0bb2ad876599ca0f1"
+default_vpc_cidr            = "172.31.0.0/16"
+default_vpc_route_table_id  = "rtb-058289fa903d901c4"
+zone_id                     = "Z093842334KRCLE5WWCFA"
+env                         = "dev"
+ssh_ingress_cidr            = ["172.31.46.100/32"]
+
+tags = {
+  company_name = "ABC Tech"
+  business_unit = "Ecommerce"
+  project_name = "roboshop"
+  cost_center = "ecom_rs"
+  created_by = "terraform"
+}
+
+
 vpc = {
   main = {
     cidr = "10.0.0.0/16"
@@ -16,20 +32,6 @@ vpc = {
       }
     }
   }
-}
-
-default_vpc_id = "vpc-0bb2ad876599ca0f1"
-default_vpc_cidr = "172.31.0.0/16"
-default_vpc_route_table_id = "rtb-058289fa903d901c4"
-zone_id                    = "Z093842334KRCLE5WWCFA"
-env = "dev"
-
-tags = {
-  company_name = "ABC Tech"
-  business_unit = "Ecommerce"
-  project_name = "roboshop"
-  cost_center = "ecom_rs"
-  created_by = "terraform"
 }
 
 alb = {
@@ -88,7 +90,13 @@ elasticache = {
 
 rabbitmq = {
   main = {
-    ssh_ingress_cidr = ["172.31.46.100/32"]
     instance_type = "t3.micro"
+  }
+}
+
+apps = {
+  frontend = {
+    instance_type = "t3.micro"
+    port          = 80
   }
 }
