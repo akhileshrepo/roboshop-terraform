@@ -108,7 +108,6 @@ module "app" {
 
   for_each                        = var.apps
   component                       = each.key
-  instance_type                   = each.value["instance_type"]
   port                            = each.value["port"]
 
   vpc_id                          = local.vpc_id
