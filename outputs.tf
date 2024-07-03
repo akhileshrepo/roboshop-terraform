@@ -9,3 +9,7 @@ output "default_vpc_id" {
 output "app_subnets" {
   value = local.app_subnets
 }
+
+output "alb" {
+  value = module.alb
+}
