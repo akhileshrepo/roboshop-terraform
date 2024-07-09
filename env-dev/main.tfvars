@@ -4,7 +4,8 @@ default_vpc_route_table_id  = "rtb-058289fa903d901c4"
 zone_id                     = "Z093842334KRCLE5WWCFA"
 env                         = "dev"
 ssh_ingress_cidr            = ["172.31.46.100/32"]
-az = ["us-east-1a", "us-east-1b"]
+az                          = ["us-east-1a", "us-east-1b"]
+monitoring_ingress_cidr     =  ["172.31.93.2/32"]
 
 tags = {
   company_name  = "ABC Tech"
