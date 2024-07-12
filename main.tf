@@ -99,17 +99,16 @@ module "alb" {
 # }
 
 module "app" {
-  #depends_on = [module.docdb, module.alb, module.elasticache, module.rabbitmq, module.rds]
-  source     = "git::https://github.com/akhileshrepo/tf-module-app.git"
+ #depends_on = [module.docdb, module.alb, module.elasticache, module.rabbitmq, module.rds]
+ source     = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
-  tags                    = merge(var.tags, each.value["tags"])
-
+ tags                    = merge(var.tags, each.value["tags"])
  env                     = var.env
  zone_id                 = var.zone_id
  ssh_ingress_cidr        = var.ssh_ingress_cidr
  default_vpc_id          = var.default_vpc_id
+ monitoring_ingress_cidr = var.monitoring_ingress_cidr
  az                      = var.az
-  monitoring_ingress_cidr = var.monitoring_ingress_cidr
 
  for_each         = var.apps
  component        = each.key
@@ -119,7 +118,7 @@ module "app" {
  max_size         = each.value["max_size"]
  min_size         = each.value["min_size"]
  lb_priority      = each.value["lb_priority"]
-  parameters      =  each.value["parameters"]
+ parameters       = each.value["parameters"]
 
  sg_ingress_cidr = local.app_subnets_cidr
  vpc_id          = local.vpc_id
@@ -130,4 +129,3 @@ module "app" {
  private_listener = lookup(lookup(lookup(module.alb, "private", null), "listener", null), "arn", null)
  public_listener  = lookup(lookup(lookup(module.alb, "public", null), "listener", null), "arn", null)
 }
-
