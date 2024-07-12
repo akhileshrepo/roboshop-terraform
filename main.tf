@@ -103,6 +103,7 @@ module "app" {
   source     = "git::https://github.com/akhileshrepo/tf-module-app.git"
 
   tags                    = merge(var.tags, each.value["tags"])
+
  env                     = var.env
  zone_id                 = var.zone_id
  ssh_ingress_cidr        = var.ssh_ingress_cidr
