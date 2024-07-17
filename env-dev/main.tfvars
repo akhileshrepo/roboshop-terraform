@@ -5,7 +5,7 @@ zone_id                     = "Z093842334KRCLE5WWCFA"
 env                         = "dev"
 ssh_ingress_cidr            = ["172.31.46.100/32"]
 az                          = ["us-east-1a", "us-east-1b"]
-monitoring_ingress_cidr     =  ["172.31.83.153/32"]
+monitoring_ingress_cidr     =  ["172.31.86.190/32"]
 
 tags = {
   company_name  = "ABC Tech"
