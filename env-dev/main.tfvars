@@ -1,7 +1,7 @@
 default_vpc_id              = "vpc-0bb2ad876599ca0f1"
 default_vpc_cidr            = "172.31.0.0/16"
 default_vpc_route_table_id  = "rtb-058289fa903d901c4"
-zone_id                     = "Z093842334KRCLE5WWCFA"
+zone_id                     = "Z0345275C3S6UDSOR4CU"
 env                         = "dev"
 ssh_ingress_cidr            = ["172.31.46.100/32"]
 az                          = ["us-east-1a", "us-east-1b"]
