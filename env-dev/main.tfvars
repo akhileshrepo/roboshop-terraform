@@ -6,6 +6,7 @@ env                         = "dev"
 ssh_ingress_cidr            = ["172.31.46.100/32"]
 az                          = ["us-east-1a", "us-east-1b"]
 monitoring_ingress_cidr     =  ["172.31.86.190/32"]
+acm_certificate_arn         = "arn:aws:acm:us-east-1:058264419835:certificate/3f74f244-262b-446f-b26d-edd8258df712"
 
 tags = {
   company_name  = "ABC Tech"
@@ -41,7 +42,7 @@ alb = {
     internal        = false
     lb_type         = "application"
     sg_ingress_cidr = ["0.0.0.0/0"]
-    sg_port         = 80
+    sg_port         = 443
   }
 
   private = {
