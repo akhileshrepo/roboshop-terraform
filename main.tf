@@ -99,6 +99,7 @@ module "rabbitmq" {
   instance_type                   = each.value["instance_type"]
   ssh_ingress_cidr                = var.ssh_ingress_cidr
   zone_id                         = var.zone_id
+  kms_key_id                      = var.kms_key_id
 }
 
 module "app" {
