@@ -65,6 +65,7 @@ module "rds" {
   instance_count              = each.value["instance_count"]
   instance_class              = each.value["instance_class"]
   skip_final_snapshot         = each.value["skip_final_snapshot"]
+  kms_key_id                  = var.kms_key_id
 }
 
 module "elasticache" {
