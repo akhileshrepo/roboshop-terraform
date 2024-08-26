@@ -42,6 +42,7 @@ module "docdb" {
   engine_family               = each.value["engine_family"]
   instance_count              = each.value["instance_count"]
   instance_class              = each.value["instance_class"]
+  kms_key_id                  = var.kms_key_id
 }
 
 
