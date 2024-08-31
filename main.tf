@@ -147,7 +147,7 @@ module "eks" {
   version = "~> 19.0"
 
   cluster_name    = "prod-roboshop"
-  cluster_version = "1.28"
+  cluster_version = "1.31"
 
   cluster_endpoint_public_access  = false
 
